@@ -3,15 +3,23 @@ import ObjectConnections from "./ObjectConnections/ObjectConnections";
 import ObjectDisplay from "./ObjectDisplay/ObjectDisplay";
 import ObjectDisplayChosen from "./ObjectDisplayChosen/ObjectDisplayChosen";
 import ObjectNav from "./ObjectNav/ObjectNav";
-import {dataAll} from './data.js'
+import { usersData, groupsData, meetingsData }  from './data.js'
 const NavigatorWindow = () => {
-    const [data, setData] = useState(dataAll)
-    console.log(dataAll)
+    const [displayedData, setDisplayData] = useState('users');
+    const changeDataDisplay = (type) => {
+        setDisplayData(type);
+    }
     return(
         <div>
             <ObjectDisplayChosen/>
-            <ObjectNav/>
-            <ObjectDisplay/>
+            <ObjectNav users={usersData} 
+            groups={groupsData} 
+            meetings={meetingsData} 
+            onDisplayChange={changeDataDisplay}/>
+            <ObjectDisplay displayedData={displayedData}
+            users={usersData} 
+            groups={groupsData} 
+            meetings={meetingsData} />
             <ObjectConnections/>
         </div>
     )

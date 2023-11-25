@@ -1,35 +1,35 @@
 const users = [
     {
         id: 1,
-        username: "JohnDoe322",
+        name: "JohnDoe322",
         avatar: "GG",
         groups: [1],
         meetings: [1]
     },
     {
         id: 2,
-        username: "JaneDoe1337",
+        name: "JaneDoe1337",
         avatar: "GG",
         groups: [1, 2],
         meetings: [2]
     },
     {
         id: 3,
-        username: "ElonMuskReal",
+        name: "ElonMuskReal",
         avatar: "GG",
         groups: [1, 2, 3],
         meetings: [2, 3]
     },
     {
         id: 4,
-        username: "XiJinpingReal",
+        name: "XiJinpingReal",
         avatar: "GG",
         groups: [],
         meetings: [3]
     },
     {
         id: 5,
-        username: "NicolAnistonLol",
+        name: "NicolAnistonLol",
         avatar: "GG",
         groups: [4],
         meetings: []
@@ -84,8 +84,6 @@ const meetings = [
     }
 ];
 
-export const dataAll = [
-    users,
-    groups,
-    meetings
-]
+export const usersData = users
+export const groupsData = groups
+export const meetingsData = meetings
