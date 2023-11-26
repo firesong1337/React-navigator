@@ -1,6 +1,7 @@
 import { useState } from "react";
 
-const ObjectDisplay = ({displayedData, users, groups, meetings }) => {
+const ObjectDisplay = ({displayedData, users, groups, meetings, onSelect }) => {
+    const [selectedItem, setSelectedItem] = useState(null);
     let getData = [];
 
     switch (displayedData) {
@@ -16,11 +17,17 @@ const ObjectDisplay = ({displayedData, users, groups, meetings }) => {
         default:
             getData = [];
     }
+    const handleItemClick = (item) => {
+        setSelectedItem(item);
+        onSelect(item); // Передаем выбранный элемент в родительский компонент
+      };
     return(
         <div>
             {getData.map(item => (
                 // Отобразите данные для каждого элемента в соответствии с текущим displayType
-                <div key={item.id}>{item.name}</div>
+                <div key={item.id} onClick={() => handleItemClick(item)}>
+                    {item.name}
+                </div>
             ))}
         </div>
     )
