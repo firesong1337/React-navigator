@@ -1,12 +1,11 @@
 import { useState } from "react";
 
-const ObjectNav= ({ users, groups, meetings, onDisplayChange }) => {
-    const [] = useState()
+const ObjectNav= ({ users, groups, meetings, onSelectChange }) => {
     return(
             <nav>
-                <button onClick={() => onDisplayChange('users')}>Users</button>
-                <button onClick={() => onDisplayChange('groups')}>Groups</button>
-                <button onClick={() => onDisplayChange('meetings')}>Meetings</button>
+                <button onClick={() => onSelectChange(users)}>Users</button>
+                <button onClick={() => onSelectChange(groups)}>Groups</button>
+                <button onClick={() => onSelectChange(meetings)}>Meetings</button>
             </nav>
     )
 }

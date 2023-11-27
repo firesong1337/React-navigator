@@ -1,9 +1,9 @@
 import { useState } from "react";
 
-const ObjectDisplayChosen = () => {
+const ObjectDisplayChosen = ({selectedItem}) => {
     return(
         <div>
-            
+            <h1>{selectedItem.name}</h1>
         </div>
     )
 }
