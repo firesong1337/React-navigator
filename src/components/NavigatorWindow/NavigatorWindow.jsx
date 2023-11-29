@@ -4,6 +4,7 @@ import ObjectDisplay from "./ObjectDisplay/ObjectDisplay";
 import ObjectDisplayChosen from "./ObjectDisplayChosen/ObjectDisplayChosen";
 import ObjectNav from "./ObjectNav/ObjectNav";
 import { usersData, groupsData, meetingsData }  from './data.js'
+import './NavigatorWindow.css'
 
 const NavigatorWindow = () => {
 
@@ -14,7 +15,6 @@ const NavigatorWindow = () => {
             "name": "",
             "value": []
         }
-            
     ])
     const [selectedConnection, setSelectedConnection] = useState(false)
     const [connectionData, setConnectionData] = useState([])
@@ -55,8 +55,16 @@ const NavigatorWindow = () => {
         setSelectedConnection(true)
         setConnectionData(value)
     }
+    const resetItems = () => {
+        setDisplayData([])
+        setSelectedItem({"name":"", "avatar":""})
+        setConnectedObjects([ {"name": "","value": []}])
+        setSelectedConnection(false)
+        setConnectionData([])
+    }
     return(
-        <div>
+        <div className="navigator-window">
+
             <ObjectDisplayChosen 
             selectedItem={selectedItem}
             />
@@ -65,6 +73,7 @@ const NavigatorWindow = () => {
             groups={groupsData} 
             meetings={meetingsData} 
             onSelectChange={changeDataDisplay}
+            onResetData={resetItems}
             />
 
             <ObjectDisplay displayedData={displayedData}
@@ -72,13 +81,15 @@ const NavigatorWindow = () => {
             connectionIfSelected={selectedConnection}
             connectionData={connectionData}
             />
-
+            
+            <h3>Connected Objects</h3>
             <ObjectConnections
             users={usersData} 
             groups={groupsData} 
             meetings={meetingsData} 
             connectedObjects={connectedObjects}
             onDisplayChange={changeConnectionDisplay}/>
+
         </div>
     )
 }

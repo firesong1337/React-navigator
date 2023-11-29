@@ -1,25 +1,35 @@
 import { useState } from "react";
+import './ObjectDisplay.css'
+
+const emptyAvatarHandler = (data) => {
+    const emptyAvatar = "https://t4.ftcdn.net/jpg/04/08/24/43/360_F_408244382_Ex6k7k8XYzTbiXLNJgIL8gssebpLLBZQ.jpg"
+    for (let i = 0; i < data.length; i++) {
+        if (data[i].avatar === "") {
+            data[i].avatar = emptyAvatar;
+        }
+    }
+}
 
 const ObjectDisplay = ({displayedData, onSelect, connectionData }) => {
-    const [selectedItem, setSelectedItem] = useState(null);
-    let getData = [];
     console.log("connectionData: ",connectionData)
-   getData = displayedData
-   if (connectionData.length !== 0) {
-    getData = getData.filter(data => connectionData.includes(data.id))
-   }
+    emptyAvatarHandler(displayedData)
+    let getData = displayedData
+
+    if (connectionData.length !== 0) {
+        getData = getData.filter(data => connectionData.includes(data.id))
+    }
    console.log("getData: ",getData)
    
     const handleItemClick = (item) => {
-        setSelectedItem(item);
-        onSelect(item); // Передаем выбранный элемент в родительский компонент
+        onSelect(item);
       };
+    
     return(
-        <div>
+        <div className="object-list">
             {getData.map(item => (
-                // Отобразите данные для каждого элемента в соответствии с текущим displayType
-                <div key={item.id} onClick={() => handleItemClick(item)}>
-                    {item.name}
+                <div key={item.id} onClick={() => handleItemClick(item)} className="object-item">
+                    <img src={item.avatar} className="object-avatar"/>
+                    <p>{item.name}</p>
                 </div>
             ))}
         </div>

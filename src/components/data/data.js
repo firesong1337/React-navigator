@@ -2,7 +2,7 @@ const users = [
     {
         id: 1,
         username: "JohnDoe322",
-        avatar: "GG",
+        avatar: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Nicole_Aniston_2012.jpg/800px-Nicole_Aniston_2012.jpg",
         groups: [1],
         meetings: [1]
     },
