@@ -1,8 +1,6 @@
-import { useState } from "react";
 import './ObjectDisplayChosen.css'
 
-const ObjectDisplayChosen = ({selectedItem}) => {
-    console.log(selectedItem)
+export const ObjectDisplayChosen = ({selectedItem}) => {
     return(
         selectedItem.name !== "" && (
         <header className="display-chosen">
@@ -12,5 +10,3 @@ const ObjectDisplayChosen = ({selectedItem}) => {
         )
     )
 }
-
-export default ObjectDisplayChosen;

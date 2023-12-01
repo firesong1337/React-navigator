@@ -1,9 +1,6 @@
-import { useState } from "react";
 import './ObjectConnections.css'
 
-const ObjectConnections = ({users, groups, meetings, connectedObjects, onDisplayChange}) => {
-    const [selectedConnection, setSelectedConnection] = useState();
-    console.log("connectedObjects: ",connectedObjects)
+export const ObjectConnections = ({users, groups, meetings, connectedObjects, onDisplayChange}) => {
 
     const handleConnectionClick = (type, value) => {
         switch(type) {
@@ -14,15 +11,12 @@ const ObjectConnections = ({users, groups, meetings, connectedObjects, onDisplay
             case "meetings": type = meetings 
             break
         }
-        setSelectedConnection(type);
-        console.log("selectedConnection: ", type)
-        onDisplayChange(type, value); // Передаем выбранный элемент в родительский компонент
-      };
+        onDisplayChange(type, value); 
+    }
 
     return(
         <div className="connected-objects">
             {connectedObjects.map((obj,index) => (
-                // Отобразите данные для каждого элемента в соответствии с текущим displayType
                 obj.value.length !== 0 && (
                 <div 
                 key={index} 
@@ -35,5 +29,3 @@ const ObjectConnections = ({users, groups, meetings, connectedObjects, onDisplay
         </div>
     )
 }
-
-export default ObjectConnections;

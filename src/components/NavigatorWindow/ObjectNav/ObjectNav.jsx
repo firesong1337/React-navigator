@@ -1,7 +1,7 @@
 import { useState } from "react";
 import './ObjectNav.css'
 
-const ObjectNav= ({ users, groups, meetings, onSelectChange, onResetData }) => {
+export const ObjectNav= ({ users, groups, meetings, onSelectChange, onResetData }) => {
     return(
             <nav className="navbar">
                 <ul>
@@ -15,5 +15,3 @@ const ObjectNav= ({ users, groups, meetings, onSelectChange, onResetData }) => {
             </nav>
     )
 }
-
-export default ObjectNav;

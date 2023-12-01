@@ -1,12 +1,10 @@
-import NavigatorWindow from "./components/NavigatorWindow/NavigatorWindow";
-import { useEffect, useState } from "react";
-function App() {
-  
+import {NavigatorWindow} from "./components/NavigatorWindow/NavigatorWindow";
+import { ResizableWindow } from "./components/ResizableWindow/ResizableWindow";
+export const App = () => {
   return (
     <div className="App">
-      <NavigatorWindow />
+      <ResizableWindow/>
     </div>
   );
 }
 
-export default App;
