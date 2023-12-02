@@ -1,9 +1,10 @@
 :root {
-    --primary: #3ec5a3;
+    /* молодец 😎 */
+  --primary: #3ec5a3; 
 }
 
 h3 {
-    --typography-spacing-vertical: 12px;
-    margin-top: 0;
-    margin-bottom: 0;
+  --typography-spacing-vertical: 12px;
+  margin-top: 0;
+  margin-bottom: 0;
 }

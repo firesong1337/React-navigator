@@ -1,21 +1,22 @@
 .connected-objects {
-    width:fit-content;
-    display: flex;
-    flex-direction: column;
-    margin: 12px 0;
-    gap: 20px;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  margin: 12px 0;
+  gap: 20px;
 }
 .connected-item {
-    width: 200px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    gap: 12px;
+  width: 200px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
 }
+/* count */
 .connected-item-length {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background-color: #11191f;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #11191f;
 }

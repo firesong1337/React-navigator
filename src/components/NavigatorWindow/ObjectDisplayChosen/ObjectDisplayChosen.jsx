@@ -1,11 +1,22 @@
 import './ObjectDisplayChosen.css'
 
-export const ObjectDisplayChosen = ({selectedItem}) => {
+const defaultTag = 'h3'
+
+/**
+ * + SR все хорошо
+ * + простой
+ * + семантика
+ * 
+ * - поведение без аватара
+ */
+export const ObjectDisplayChosen = ({selectedItem, as}) => {
+    const Tag = as ?? defaultTag
+
     return(
         selectedItem.name !== "" && (
         <header className="display-chosen">
             <img src={selectedItem.avatar} className="avatar"/>
-            <h3>{selectedItem.name}</h3>
+            <Tag>{selectedItem.name}</Tag> {/* jsx('h3' | as, ...) */}
         </header>
         )
     )
